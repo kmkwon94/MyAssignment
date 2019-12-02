@@ -4,7 +4,7 @@
 #include <vector>
 using namespace std;
 
-int main33333333322222222211111111()
+int main()
 {
 	vector<int> H(1);
 	H[0] = 1;
@@ -13,12 +13,12 @@ int main33333333322222222211111111()
 	{
 		H.push_back(2 * H[i]);
 		H.push_back(3 * H[i]);
-		H.push_back(5 * H[i]);//ÇØ¹Ö¼ö º¤ÅÍ¿¡ ÀÖ´Â ¼ıÀÚÀÇ 2,3,5¹èÀÇ¼ıÀÚ¸¦ º¤ÅÍ¿¡ ³Ö´Â´Ù.
+		H.push_back(5 * H[i]);//í•´ë°ìˆ˜ ë²¡í„°ì— ìˆëŠ” ìˆ«ìì˜ 2,3,5ë°°ì˜ìˆ«ìë¥¼ ë²¡í„°ì— ë„£ëŠ”ë‹¤.
 
-		sort(H.begin(), H.end());//Á¤·Ä
+		sort(H.begin(), H.end());//ì •ë ¬
 		vector<int>::iterator it;
-		it = unique(H.begin(), H.end());//Áßº¹Á¦°Å
-		H.erase(it, H.end());//Áßº¹Á¦°ÅÈÄ ºó ÀÎµ¦½º¸¦ Ã³¸®ÇÑ´Ù.
+		it = unique(H.begin(), H.end());//ì¤‘ë³µì œê±°
+		H.erase(it, H.end());//ì¤‘ë³µì œê±°í›„ ë¹ˆ ì¸ë±ìŠ¤ë¥¼ ì²˜ë¦¬í•œë‹¤.
 		i++;
 	}
 	int t;
@@ -32,109 +32,3 @@ int main33333333322222222211111111()
 
 	return 0;
 }
-/*
-#include <iostream>
-using namespace std;
-
-//void hammingNum(int k);
-void isHammingNum();
-int main132222213131313131222() {
-	int t = 0;
-
-	cin >> t;
-
-	for (int i = 0; i < t; i++) {
-		int k = 0;
-		cin >> k;
-		isHammingNum();
-
-	}
-	return 0;
-}
-
-void isHammingNum() {
-	int hammingNum = 0;
-	int number = 0;
-	int arr[1351];
-	int arr2[1351];
-	for (number = 1; number < 20; number++) {
-		int i = number;
-
-		if (number % 7 == 0) {
-			hammingNum = 0;
-		}
-		else {
-			if (number == 1) {
-				hammingNum = 1;
-			}
-			else if (number % 2 == 0) {
-				hammingNum = 1;
-			}
-			else if (number % 3 == 0) {
-				hammingNum = 1;
-			}
-			else if (number % 5 == 0) {
-				hammingNum = 1;
-			}
-			else {
-				hammingNum = 0;
-			}
-		}
-		
-		if (hammingNum == 1) {
-			arr[i] = number;
-		}
-		else {
-			arr[i] = 0;
-		}
-		if (arr[i] != 0) {
-			int q = 1;
-			for (q = 1; q < 20; q++) {
-				arr2[q] = arr[i];
-				cout << q << " ´Â" << arr2[q] << endl;
-
-			}
-		}
-	}
-	/*	int arr3[1351];
-	for (int j = 1; j < 100; j++) {
-		arr3[j] = arr2[j];
-		cout << j << " ´Â" << arr3[j] << endl;
-	}
-	
-
-}
-*/
-/*
-void hammingNum(int k) {
-	
-	int arr[1350];
-	int i = 1;
-	int j = 1;
-	for (int p = 0; p < 500; p++) {
-		while (i == 1 || i % 2 == 0 || i % 3 == 0 || i % 5 == 0) {
-			arr[j] = i;
-			j++;
-			i++;
-			i < 1350;
-			j < 1350;
-		}
-		i++;
-	}
-	
-	int t = 0;
-	cin >> t;
-	for(int i = 0; i < t; i++ ){
-		int input = 0;
-		cin >> input;
-		cout << "arr["<< input << "] " << "ÀÇ °ªÀº = " << arr[input] << endl;
-	}
-	/*
-	int answer = 0;
-	int *ptr = arr;
-	
-	answer = *(ptr + (k-1));
-	//cout << "Á¤´äÀº = " << answer << endl;
-
-}
-*/
